@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./src/orthogonal.css" />
+    <title>Temple for Cellular Automata</title>
+</head>
+<body>
+    <div id="world">
+        <form action="#" onsubmit="run();return false">
+            <label for="rule">Rule:</label>
+            <input type="text" value="30" id="rule" onchange="setRule(this.value);" />
+            <input type="checkbox" id="unit" onchange="setUnit();" checked />
+            <label for="unit">Emerges from a single cell</label>
+            <input type="submit" value="Generate" />
+        </form>
+        <br>
+    </div>
+    <script src="./src/orthogonal.js"></script>
+</body>
+</html>
