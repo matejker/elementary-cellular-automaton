@@ -4,6 +4,8 @@ where there are two possible states (labeled 0 and 1) and the rule to determine
 the state of a cell in the next generation depends only on the current state of 
 the cell and its two immediate neighbors. [1]
 
+<img src="./docs/tool.png" alt="tool bar" width="460">
+
 ## Rules
 A _Wolfram code_ is naming convention declared by Stephen Wolfram [3, 4] for elementary 
 cellular automaton rules. Given that each cell has 3 neighbours / ancestors, which can be in 
