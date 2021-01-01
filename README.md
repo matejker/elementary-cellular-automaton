@@ -8,9 +8,9 @@ An easy tool how to generate any _one-dimensional cellular automaton_ using basi
 square grid. Enter the rule code (from `0` to `255`), you can either set initial 
 condition as a single _living_ cell or a row with randomly selected `0` and `1`.
 
-[<img src="./docs/tool.png" alt="tool bar" width="460">](https://matejker.github.io/elementary-cellular-automaton/)
+[<img src="./docs/tool.png" alt="tool bar" width="460">](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html)
 
-[The elementary cellular automaton generator](https://matejker.github.io/elementary-cellular-automaton/)
+[The elementary cellular automaton generator](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html)
 
 ## Rules
 A _Wolfram code_ is naming convention declared by Stephen Wolfram [3, 4] for elementary 
