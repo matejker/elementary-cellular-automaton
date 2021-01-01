@@ -18,21 +18,21 @@ state is `0`.
 The name of a rule is the number in binary given by new state for center cell, 
 e.g. 00011110<sub>2</sub> = 30.
 
-### Rule 30 [[Live demo](./orthogonal.html?rule=30)]
+### Rule 30 [[Live demo](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html?rule=30)]
 ![](./docs/rule30.png)
 
 | Pattern       | 111    | 110    | 101    | 100    | 011    | 010    | 001    | 000    |
 | :---          | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **New state** | 0      | 0      | 0      | 1      | 1      | 1      | 1      | 0      |
 
-### Rule 90 [[Live demo](./orthogonal.html?rule=90)]
+### Rule 90 [[Live demo](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html?rule=90)]
 ![](./docs/rule90.png)
 
 | Pattern       | 111    | 110    | 101    | 100    | 011    | 010    | 001    | 000    |
 | :---          | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **New state** | 0      | 1      | 0      | 1      | 1      | 0      | 1      | 0      |
 
-### Rule 193 [[Live demo](./orthogonal.html?rule=193)]
+### Rule 193 [[Live demo](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html?rule=193)]
 ![](./docs/rule193.png)
 
 | Pattern       | 111    | 110    | 101    | 100    | 011    | 010    | 001    | 000    |
