@@ -1,7 +1,7 @@
-const n = 115;
-const m = 115;
+const n = 130;
+const m = 130;
 
-let rule = 1;
+let rule = 9;
 let unit = true;
 let currGen = [n];
 
@@ -9,7 +9,7 @@ let currGen = [n];
 function getRule() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    rule = urlParams.get('rule') || 1;
+    rule = urlParams.get('rule') || 9;
     unit = (parseInt(urlParams.get('unit')) != 0);
 
     let ruleElem = document.getElementById("rule");
