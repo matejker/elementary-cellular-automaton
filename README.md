@@ -1,18 +1,13 @@
-# Elementary cellular automaton
+# Elementary cellular automaton in Hexagonal, Pentagonal and Other Tessellations
 > [...] an elementary cellular automaton is a one-dimensional cellular automaton 
 where there are two possible states (labeled 0 and 1) and the rule to determine 
 the state of a cell in the next generation depends only on the current state of 
 the cell and its two immediate neighbors. [1]
 
-This is an easy tool for generating any of 256 _one-dimensional cellular automaton_ on a basic 
-square grid. Enter the rule code (from `0` to `255`), then you can set  either initial 
-condition as a single _living_ cell or a row with randomly selected `0` and `1`.
+This is an easy tool for generating any of 256 _one-dimensional cellular automaton_ on various 
+tiling such as squares, hexagons, pentagons...
 
-[<img src="./docs/tool.png" alt="tool bar" width="460">](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html)
-
-[The elementary cellular automaton generator](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html)
-
-## Rules
+## Squares
 A _Wolfram code_ is naming convention declared by Stephen Wolfram [3, 4] for elementary 
 cellular automaton rules. Given that each cell has 3 neighbours / ancestors, which can be in 
 two states `0` or `1`. Therefore, total number of combination is 2<sup>3</sup> possible 
@@ -23,29 +18,26 @@ state is `0`.
 | :---          | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **New state** | 0      | 0      | 0      | 1      | 1      | 1      | 1      | 0      |
 
-The name of a rule is the number in binary given by new state for center cell, 
-e.g. 00011110<sub>2</sub> = 30.
-
-### Rule 30 [[Live demo](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html?rule=30)]
 ![](./docs/rule30.png)
 
-| Pattern       | 111    | 110    | 101    | 100    | 011    | 010    | 001    | 000    |
-| :---          | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| **New state** | 0      | 0      | 0      | 1      | 1      | 1      | 1      | 0      |
+The name of a rule is the number in binary given by new state for center cell, 
+e.g. 00011110<sub>2</sub> = 30. See the live demo for 
+[Rule 30](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html?rule=30) and other 
+[rules](./orthogonal.md) on _regular_ square grids.
 
-### Rule 90 [[Live demo](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html?rule=90)]
-![](./docs/rule90.png)
+## Hexagons
+Second step for more complex tilings, but simpler cellular automaton are _hexagons_. 
+Each hexagon has 2 neighbours / ancestors, therefore, there are just 2<sup>2</sup> possible 
+_ancestor_ patterns.
 
-| Pattern       | 111    | 110    | 101    | 100    | 011    | 010    | 001    | 000    |
-| :---          | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| **New state** | 0      | 1      | 0      | 1      | 1      | 0      | 1      | 0      |
+![](./docs/rule9.png)
 
-### Rule 193 [[Live demo](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html?rule=193)]
-![](./docs/rule193.png)
+| Pattern       | 11     | 10     | 01     | 00     |
+| :---          | :----: | :----: | :----: | :----: | 
+| **New state** | 1      | 0      | 0      | 1      |
 
-| Pattern       | 111    | 110    | 101    | 100    | 011    | 010    | 001    | 000    |
-| :---          | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| **New state** | 1      | 1      | 0      | 0      | 0      | 0      | 0      | 1      |
+Similar as in _squares_ the name comes from the binary number given the new states, 1001<sub>2</sub> = 9,
+see [Rule 9](https://matejker.github.io/elementary-cellular-automaton/hexagonal.html?rule=9)
 
 ## References
 [1] Wikimedia (?), _Elementary cellular automaton_, https://en.wikipedia.org/wiki/Elementary_cellular_automaton  

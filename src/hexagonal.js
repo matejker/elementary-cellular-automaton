@@ -1,7 +1,7 @@
-const n = 160;
-const m = 320;
+const n = 115;
+const m = 115;
 
-let rule = 30;
+let rule = 1;
 let unit = true;
 let currGen = [n];
 
@@ -9,7 +9,7 @@ let currGen = [n];
 function getRule() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    rule = urlParams.get('rule') || 30;
+    rule = urlParams.get('rule') || 1;
     unit = (parseInt(urlParams.get('unit')) != 0);
 
     let ruleElem = document.getElementById("rule");
@@ -28,21 +28,32 @@ function setUnit() {
 }
 
 function createWorld() {
-    let world = document.querySelector("#world");
-    let tbl = document.createElement("table");
-    tbl.setAttribute("id", "worldgrid");
+    let world = document.querySelector('#world');
 
     for (let i = 0; i < n; i++) {
-        let tr = document.createElement("tr");
+        let row = document.createElement('div');
+        row.setAttribute('class', (i % 2) ? 'hex-row even': 'hex-row');
+
         for (let j = 0; j < m; j++) {
-            let cell = document.createElement("td");
-            cell.setAttribute("id", i + "_" + j);
-            cell.setAttribute("class", "dead");
-            tr.appendChild(cell);
+            let hex = document.createElement('div');
+            hex.setAttribute('class', 'hex');
+            hex.setAttribute('id', i + '_' + j);
+
+            let top = document.createElement('div');
+            top.setAttribute('class', 'top');
+            let middle = document.createElement('div');
+            middle.setAttribute('class', 'middle');
+            let bottom = document.createElement('div');
+            bottom.setAttribute('class', 'bottom');
+
+            hex.appendChild(top);
+            hex.appendChild(middle);
+            hex.appendChild(bottom);
+
+            row.appendChild(hex);
         }
-        tbl.appendChild(tr);
+    world.appendChild(row);
     }
-    world.appendChild(tbl);
 }
 
 function createGenArrays() {
@@ -53,7 +64,7 @@ function createGenArrays() {
 
 function convert2bin(dec) {
     let bin = (dec >>> 0).toString(2);
-    return "0".repeat(8 - bin.length) + bin;
+    return "0".repeat(4 - bin.length) + bin;
 }
 
 function generateInitialCondition() {
@@ -65,18 +76,18 @@ function generateInitialCondition() {
 }
 
 function getValue(binRule, nrow, ncol) {
-    let neighbours = Array(3);
+    let neighbours = Array(2);
     switch (ncol) {
         case 0:
-        neighbours = [0].concat(currGen[nrow - 1].slice(0, 2));
+        neighbours = (nrow % 2) ? [0, currGen[nrow - 1][0]] : currGen[nrow - 1].slice(0, 2);
         break;
         case m - 1:
-        neighbours = currGen[nrow - 1].slice(m - 2).concat([0]);
+        neighbours = (nrow % 2) ? currGen[nrow - 1].slice(ncol, ncol + 2) : [currGen[nrow - 1][ncol], 0];
         break;
         default:
-        neighbours = currGen[nrow - 1].slice(ncol - 1, ncol + 2);
+        neighbours = (nrow % 2) ? currGen[nrow - 1].slice(ncol, ncol + 2) : currGen[nrow - 1].slice(ncol -1 , ncol + 1);
     }
-    let pattern = 7 - parseInt(neighbours.join(""), 2);
+    let pattern = 3 - parseInt(neighbours.join(""), 2);
     return parseInt(binRule[pattern]);
 }
 
@@ -95,9 +106,9 @@ function updateWorld() {
         for (col in currGen[row]) {
             cell = document.getElementById(row + '_' + col);
             if (currGen[row][col] == 0) {
-                cell.setAttribute('class', 'dead');
+                cell.setAttribute('class', 'hex dead');
             } else {
-                cell.setAttribute('class', 'alive');
+                cell.setAttribute('class', 'hex alive');
             }
         }
     }
@@ -129,7 +140,7 @@ function run() {
         for (let j = 0; j < m; j++) {
             if (currGen[i][j] == 1) {
                 cell = document.getElementById(i + '_' + j);
-                cell.setAttribute('class', 'alive');
+                cell.setAttribute('class', 'hex alive');
             }
         }
     }
