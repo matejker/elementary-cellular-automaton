@@ -39,6 +39,20 @@ _ancestor_ patterns.
 Similar as in _squares_ the name comes from the binary number given the new states, 1001<sub>2</sub> = 9,
 see [Rule 9](https://matejker.github.io/elementary-cellular-automaton/hexagonal.html?rule=9)
 
+## Usage
+Feel more that free to use, modify and copy the code, just follow the [licence](./LICENSE.txt) and cite it:
+
+```tex
+@misc{Kerekrety2020,
+  author = {Kerekrety, M},
+  title = {Elementary cellular automaton in Hexagonal, Pentagonal and Other Tessellations},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/matejker/elementary-cellular-automaton}}
+}
+```
+
 ## References
 [1] Wikimedia (?), _Elementary cellular automaton_, https://en.wikipedia.org/wiki/Elementary_cellular_automaton  
 [2] Wolfram Research (?), _Wolfram Atlas: Elementary Cellular Automata_, http://atlas.wolfram.com/01/01/  
