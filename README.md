@@ -4,8 +4,8 @@ where there are two possible states (labeled 0 and 1) and the rule to determine
 the state of a cell in the next generation depends only on the current state of 
 the cell and its two immediate neighbors. [1]
 
-An easy tool how to generate any _one-dimensional cellular automaton_ using basic 
-square grid. Enter the rule code (from `0` to `255`), you can either set initial 
+This is an easy tool for generating any of 256 _one-dimensional cellular automaton_ on a basic 
+square grid. Enter the rule code (from `0` to `255`), then you can set  either initial 
 condition as a single _living_ cell or a row with randomly selected `0` and `1`.
 
 [<img src="./docs/tool.png" alt="tool bar" width="460">](https://matejker.github.io/elementary-cellular-automaton/orthogonal.html)
