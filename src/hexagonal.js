@@ -1,5 +1,5 @@
 const n = 130;
-const m = 130;
+const m = 127;
 
 let rule = 9;
 let unit = true;
